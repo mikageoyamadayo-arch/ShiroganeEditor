@@ -1,4 +1,4 @@
-ffunction showBook(book){
+function showBook(book){
 
 const detail = document.getElementById("bookDetail");
 
