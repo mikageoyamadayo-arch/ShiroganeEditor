@@ -3,7 +3,11 @@ const books = {
     hanaemi: {
         title: "🐤 花笑の箒星",
         volume: "第0帖",
-        description: "白銀が護りし緋の神子、前日譚。"
+        description: "白銀が護りし緋の神子、前日譚。",
+
+        chapters: [
+            "第1折　春色の夢見草",
+        ]
     },
 
     kinka: {
