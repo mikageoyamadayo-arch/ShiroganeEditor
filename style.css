@@ -1,3 +1,72 @@
-body{
+/* 全体 */
+body {
+    margin: 0;
+    font-family: "Hiragino Mincho ProN", serif;
+    background: #f6f1e7;
+    color: #3b3024;
+}
 
+/* ヘッダー */
+header {
+    background: #7a5c3e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* レイアウト */
+main {
+    display: flex;
+    min-height: calc(100vh - 80px);
+}
+
+/* 本棚 */
+aside {
+    width: 260px;
+    background: #e8dcc7;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 2px solid #c9b89d;
+}
+
+/* 本棚タイトル */
+aside h2 {
+    margin-top: 0;
+}
+
+/* ボタン */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #8f6a46;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #745437;
+}
+
+/* メイン画面 */
+section {
+    flex: 1;
+    padding: 40px;
+}
+
+/* タイトル */
+section h2 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
+/* 説明文 */
+section p {
+    line-height: 1.8;
+    font-size: 18px;
 }
