@@ -218,3 +218,17 @@ font-size:17px;
     min-height: 420px;
     resize: vertical;
 }
+
+.replace-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.replace-area input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 16px;
+}
