@@ -184,8 +184,13 @@ verseTitle.addEventListener("input", saveCurrentDraft);
 
 
 // 本文を入力したとき
-manuscript.addEventListener("input", saveCurrentDraft);
+manuscript.addEventListener("input", function () {
 
+    updateCharacterCount();
+
+    saveCurrentDraft();
+
+});
 
 // 新しい句ボタン
 newVerseButton.addEventListener("click", createNewVerse);
