@@ -6,9 +6,10 @@ const books = {
         description: "白銀が護りし緋の神子、前日譚。",
 
         chapters: [
-            "第1折　春色の夢見草",
-        ]
-    },
+            {
+                title: "第1折　春色の夢見草",
+                verses: []
+            },
 
     kinka: {
         title: "🌸 金霞の五星",
