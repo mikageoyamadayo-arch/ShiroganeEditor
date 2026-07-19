@@ -1,3 +1,4 @@
+const newVerseButton = document.getElementById("newVerseButton");
 const verseTitle = document.getElementById("verseTitle");
 const manuscript = document.getElementById("manuscript");
 const chapterSelect = document.getElementById("chapterSelect");
@@ -40,3 +41,15 @@ verseTitle.addEventListener("input", saveManuscript);
 
 // 本文を入力したとき
 manuscript.addEventListener("input", saveManuscript);
+
+newVerseButton.addEventListener("click", function () {
+
+    verseTitle.value = "";
+    manuscript.value = "";
+
+    updateCharacterCount();
+
+    saveStatus.textContent = "新しい句を作成中";
+
+});
+
