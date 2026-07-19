@@ -232,3 +232,124 @@ font-size:17px;
     padding: 12px;
     font-size: 16px;
 }
+
+.library-shelf {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
+
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 35px 30px 18px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #5d3a24,
+            #3b2418
+        );
+
+    border: 14px solid #2f1b12;
+    border-radius: 10px;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.45),
+        0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+.book-spine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90px;
+    height: 280px;
+
+    color: #f8efd8;
+    text-decoration: none;
+
+    border-radius: 6px 6px 2px 2px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        inset 5px 0 8px rgba(255, 255, 255, 0.12),
+        inset -5px 0 8px rgba(0, 0, 0, 0.2),
+        4px 4px 8px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.book-spine span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    font-size: 21px;
+    letter-spacing: 5px;
+    font-family: serif;
+}
+
+
+.book-spine:hover,
+.book-spine:active {
+    transform: translateY(-18px);
+
+    box-shadow:
+        inset 5px 0 8px rgba(255, 255, 255, 0.12),
+        inset -5px 0 8px rgba(0, 0, 0, 0.2),
+        8px 14px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+.book-red {
+    background: linear-gradient(
+        to right,
+        #6d1d2b,
+        #9b3446,
+        #611724
+    );
+}
+
+
+.book-green {
+    background: linear-gradient(
+        to right,
+        #284e3a,
+        #47745b,
+        #203f30
+    );
+}
+
+
+.book-blue {
+    background: linear-gradient(
+        to right,
+        #293c62,
+        #49618b,
+        #223354
+    );
+}
+
+
+.book-brown {
+    background: linear-gradient(
+        to right,
+        #60412d,
+        #8a6347,
+        #513523
+    );
+}
+
+
+.book-black {
+    background: linear-gradient(
+        to right,
+        #262526,
+        #474347,
+        #1d1c1d
+    );
+}
