@@ -52,7 +52,7 @@ function showChapter(book, chapterIndex) {
         <h4>🖋️ 句一覧</h4>
 
         <ul>
-            ${verseList || "<句はまだ登録されていません</li>"}
+            ${verseList || "<li>句はまだ登録されていません</li>"}
         </ul>
           
     `;
