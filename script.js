@@ -2,7 +2,7 @@ function showBook(book){
 
 const detail=document.getElementById("bookDetail");
 
-if(book==="hanawarai"){
+if(book==="hanaemi"){
 
 detail.innerHTML=`
 
@@ -26,18 +26,25 @@ detail.innerHTML=`
 
 <h2>🌸 金霞の五星</h2>
 
-<p>
+<p>第1帖</p>
 
-白銀が護りし緋の神子　第1帖。
+<div class="chapter-list">
 
-白銀8人の出会いを描く物語。
+<button>第1折　結成、特務部隊・白銀</button>
 
-</p>
+<button>第2折　カフェーという闇</button>
+
+<button>第3折　それぞれの想い</button>
+
+<button>第4折　終わりの始まり</button>
+
+<button>第5折　追うものから追われるものへ</button>
+</div>
 
 `;
 
 }
-
+  
 if(book==="ginrei"){
 
 detail.innerHTML=`
