@@ -2,6 +2,8 @@ function showBook(book){
 
 const detail = document.getElementById("bookDetail");
 
+const date = books[book];
+
 const chapterList = data.chapters
     .map(chapter => `<li>${chapter}</li>`)
     .join("");
