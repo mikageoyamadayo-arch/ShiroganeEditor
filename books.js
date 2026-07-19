@@ -27,7 +27,11 @@ const books = {
     ginrei: {
         title: "❄️ 銀嶺の秘鑰",
         volume: "第2帖",
-        description: "白銀が護りし緋の神子、北領編 第2部。"
+        description: "白銀が護りし緋の神子、北領編 第2部。",
+
+        chapters: [
+            
+        ]
     },
 
 };
