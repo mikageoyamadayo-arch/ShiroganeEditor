@@ -133,3 +133,17 @@ margin-top:10px;
 color:#777;
 
 }
+
+#bookDetail{
+
+margin-top:40px;
+
+background:white;
+
+padding:30px;
+
+border-radius:16px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
