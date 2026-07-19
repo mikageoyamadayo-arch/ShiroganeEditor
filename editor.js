@@ -7,8 +7,21 @@ const characterCount = document.getElementById("characterCount");
 const saveStatus = document.getElementById("saveStatus");
 const newVerseButton = document.getElementById("newVerseButton");
 
-let drafts = JSON.parse(localStorage.getItem("shiroganeDrafts")) || [];
+let drafts = [];
 let currentDraftId = null;
+
+
+// 保存データを安全に読み込む
+try {
+
+    drafts =
+        JSON.parse(localStorage.getItem("shiroganeDrafts")) || [];
+
+} catch (error) {
+
+    drafts = [];
+
+}
 
 
 // 文字数を表示
@@ -21,7 +34,51 @@ function updateCharacterCount() {
 }
 
 
-// 原稿一覧をプルダウンへ表示
+// すべての原稿を保存
+function saveAllDrafts() {
+
+    localStorage.setItem(
+        "shiroganeDrafts",
+        JSON.stringify(drafts)
+    );
+
+    localStorage.setItem(
+        "lastChapter",
+        chapterSelect.value
+    );
+
+}
+
+
+// 現在の原稿を読み込む
+function loadCurrentDraft() {
+
+    const draft = drafts.find(
+        item => String(item.id) === String(currentDraftId)
+    );
+
+    if (!draft) {
+
+        verseTitle.value = "";
+        manuscript.value = "";
+
+        updateCharacterCount();
+
+        return;
+
+    }
+
+    verseTitle.value = draft.title || "";
+    manuscript.value = draft.text || "";
+
+    updateCharacterCount();
+
+    saveStatus.textContent = "保存済み";
+
+}
+
+
+// 保存済みの句を表示
 function updateVerseSelect() {
 
     const selectedChapter = chapterSelect.value;
@@ -46,11 +103,11 @@ function updateVerseSelect() {
 
     }
 
-    if (
-        !chapterDrafts.some(
-            draft => String(draft.id) === String(currentDraftId)
-        )
-    ) {
+    const currentDraftExists = chapterDrafts.some(
+        draft => String(draft.id) === String(currentDraftId)
+    );
+
+    if (!currentDraftExists) {
 
         currentDraftId = chapterDrafts[0].id;
 
@@ -63,28 +120,7 @@ function updateVerseSelect() {
 }
 
 
-// 選択中の原稿を読み込む
-function loadCurrentDraft() {
-
-    const draft = drafts.find(
-        item => String(item.id) === String(currentDraftId)
-    );
-
-    if (!draft) {
-        return;
-    }
-
-    verseTitle.value = draft.title;
-    manuscript.value = draft.text;
-
-    updateCharacterCount();
-
-    saveStatus.textContent = "保存済み";
-
-}
-
-
-// 新しい句を作る
+// 新しい句を作成
 function createNewVerse() {
 
     const newDraft = {
@@ -99,7 +135,6 @@ function createNewVerse() {
     currentDraftId = newDraft.id;
 
     saveAllDrafts();
-
     updateVerseSelect();
 
     verseTitle.focus();
@@ -109,7 +144,7 @@ function createNewVerse() {
 }
 
 
-// 現在の原稿を保存
+// 現在の句を保存
 function saveCurrentDraft() {
 
     const draft = drafts.find(
@@ -126,10 +161,10 @@ function saveCurrentDraft() {
 
     saveAllDrafts();
 
-    updateCharacterCount();
-
     const selectedOption =
-        verseSelect.querySelector(`option[value="${currentDraftId}"]`);
+        verseSelect.querySelector(
+            `option[value="${currentDraftId}"]`
+        );
 
     if (selectedOption) {
 
@@ -143,23 +178,7 @@ function saveCurrentDraft() {
 }
 
 
-// 原稿を端末へ保存
-function saveAllDrafts() {
-
-    localStorage.setItem(
-        "shiroganeDrafts",
-        JSON.stringify(drafts)
-    );
-
-    localStorage.setItem(
-        "lastChapter",
-        chapterSelect.value
-    );
-
-}
-
-
-// 折を変更したとき
+// 折を変更
 chapterSelect.addEventListener("change", function () {
 
     currentDraftId = null;
@@ -169,7 +188,7 @@ chapterSelect.addEventListener("change", function () {
 });
 
 
-// 保存済みの句を変更したとき
+// 保存済みの句を変更
 verseSelect.addEventListener("change", function () {
 
     currentDraftId = verseSelect.value;
@@ -179,35 +198,32 @@ verseSelect.addEventListener("change", function () {
 });
 
 
-// 題名を入力したとき
-verseTitle.addEventListener("input", saveCurrentDraft);
-
-
-// 本文を入力したとき
-manuscript.addEventListener("input", function () {
-
-    updateCharacterCount();
+// 題名を入力
+verseTitle.addEventListener("input", function () {
 
     saveCurrentDraft();
 
 });
 
-// 新しい句ボタン
-newVerseButton.addEventListener("click", createNewVerse);
+
+// 本文を入力
+manuscript.addEventListener("input", function () {
+
+    updateCharacterCount();
+    saveCurrentDraft();
+
+});
 
 
-// 最後に選んでいた折を復元
-const lastChapter = localStorage.getItem("lastChapter");
+// 新しい句を作る
+newVerseButton.addEventListener("click", function () {
 
-if (lastChapter) {
+    createNewVerse();
 
-    chapterSelect.value = lastChapter;
+});
 
-}
 
-// 最初の原稿を表示
-updateVerseSelect();
-
+// 本文をコピー
 copyButton.addEventListener("click", async function () {
 
     try {
@@ -228,3 +244,17 @@ copyButton.addEventListener("click", async function () {
 
 });
 
+
+// 最後に選んでいた折を復元
+const lastChapter = localStorage.getItem("lastChapter");
+
+if (lastChapter) {
+
+    chapterSelect.value = lastChapter;
+
+}
+
+
+// 最初の原稿を表示
+updateVerseSelect();
+updateCharacterCount();
