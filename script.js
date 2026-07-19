@@ -24,4 +24,4 @@ ${chapterList}
 
 `;
     
-}
+};
