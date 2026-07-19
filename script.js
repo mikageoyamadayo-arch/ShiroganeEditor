@@ -5,7 +5,7 @@ const detail = document.getElementById("bookDetail");
 const data = books[book];
 
 const chapterList = data.chapters
-    .map(chapter => `
+    .map((chapter, index) => `
         <li>
             <button 
                class="chapter-button" 
