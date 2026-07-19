@@ -2,68 +2,55 @@
 <html lang="ja">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>本棚</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>本棚</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h1>📚 本棚</h1>
+        <h1>📚 本棚</h1>
 
-<p class="catch">
-作品を選んでください
-</p>
+        <p class="catch">
+            作品を選んでください
+        </p>
 
-<div class="book-list">
+        <div class="book-list">
 
-    <div class="book-card" onclick="showBook('hanaemi')">
+            <div class="book-card" onclick="showBook('hanaemi')">
+                <h3>🐤 花笑の箒星</h3>
+                <p>第0帖</p>
+            </div>
 
-        <h3>🐤 花笑の箒星</h3>
+            <div class="book-card" onclick="showBook('kinka')">
+                <h3>🌸 金霞の五星</h3>
+                <p>第1帖</p>
+            </div>
 
-        <p>第0帖</p>
+            <div class="book-card" onclick="showBook('ginrei')">
+                <h3>❄️ 銀嶺の秘鑰</h3>
+                <p>第2帖</p>
+            </div>
+
+        </div>
+
+        <div id="bookDetail"></div>
+
+        <br>
+
+        <button onclick="location.href='index.html'">
+            ← 書庫へ戻る
+        </button>
 
     </div>
 
-    <div class="book-card" onclick="showBook('kinka')">
-
-        <h3>🌸 金霞の五星</h3>
-
-        <p>第1帖</p>
-
-    </div>
-
-    <div class="book-card" onclick="showBook('ginrei')">
-
-        <h3>❄️ 銀嶺の秘鑰</h3>
-
-        <p>第2帖</p>
-
-    </div>
-
-</div>
-
-<div id="bookDetail"></div>
-
-<script src="books.js"></script>
-<script src="script.js"></script></div>
-<br>
-
-<button onclick="location.href='index.html'">
-
-← 書庫へ戻る
-
-</button>
-
-</div>
+    <script src="books.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
