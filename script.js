@@ -7,8 +7,11 @@ const data = books[book];
 const chapterList = data.chapters
     .map(chapter => `
         <li>
-            <button class="chapter-button" onclick="showChapter('${chapter}')">
-                ${chapter}
+            <button 
+               class="chapter-button" 
+               onclick="showChapter('${book}', ${index})"
+            >
+                ${chapter.title}
             </button>
         </li>
     `)
@@ -16,21 +19,42 @@ const chapterList = data.chapters
 
 detail.innerHTML = `
 
-<h2>${data.title}</h2>
+    <h2>${data.title}</h2>
 
-<p>${data.volume}</p>
+    <p>${data.volume}</p>
 
-<p>${data.description}</p>
+    <p>${data.description}</p>
 
-<h3>📖 折一覧</h3>
+    <h3>📖 折一覧</h3>
 
-<ul>
-${chapterList}
-</ul>
+    <ul>
+       ${chapterList}
+    </ul>
 
-`;
+    <div id="chapterDetail"></div>
+
+ `;
 }
 
-function showChapter(chapter){
-    alert(chapter);    
-};
+function showChapter(book, chapterIndex) {
+    
+    const chapterDetail = document.getElementById("chapterDetail");
+
+    const chapter = books[book].chapters[chapterIndex];
+
+    const verseList = chapter.verses
+        .map(verse => `<li>${verse}</li>`)
+        .join("");
+
+    chapterDetail.innerHTML = `
+        <h3>${chapter.title}</h3>
+
+        <h4>🖋️ 句一覧</h4>
+
+        <ul>
+            ${verseList || "<句はまだ登録されていません</li>"}
+        </ul>
+          
+    `;
+ 
+}
