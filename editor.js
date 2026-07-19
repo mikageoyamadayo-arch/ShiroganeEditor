@@ -1,3 +1,4 @@
+const copyButton = document.getElementById("copyButton");
 const chapterSelect = document.getElementById("chapterSelect");
 const verseSelect = document.getElementById("verseSelect");
 const verseTitle = document.getElementById("verseTitle");
@@ -199,6 +200,26 @@ if (lastChapter) {
 
 }
 
-
 // 最初の原稿を表示
 updateVerseSelect();
+
+copyButton.addEventListener("click", async function () {
+
+    try {
+
+        await navigator.clipboard.writeText(manuscript.value);
+
+        saveStatus.textContent = "本文をコピーしました";
+
+    } catch (error) {
+
+        manuscript.select();
+
+        document.execCommand("copy");
+
+        saveStatus.textContent = "本文をコピーしました";
+
+    }
+
+});
+
