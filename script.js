@@ -2,7 +2,7 @@ function showBook(book){
 
 const detail = document.getElementById("bookDetail");
 
-const date = books[book];
+const data = books[book];
 
 const chapterList = data.chapters
     .map(chapter => `<li>${chapter}</li>`)
