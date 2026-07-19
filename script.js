@@ -5,7 +5,13 @@ const detail = document.getElementById("bookDetail");
 const data = books[book];
 
 const chapterList = data.chapters
-    .map(chapter => `<li>${chapter}</li>`)
+    .map(chapter => `
+        <li>
+            <button class="chapter-button">
+                ${chapter}
+            </button>
+        </li>
+    `)
     .join("");
 
 detail.innerHTML = `
