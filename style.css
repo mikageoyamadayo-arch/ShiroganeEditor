@@ -191,3 +191,30 @@ padding:16px;
 font-size:17px;
 
 }
+
+.editor-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.editor-area label {
+    font-size: 18px;
+}
+
+.editor-area select,
+.editor-area input,
+.editor-area textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 12px;
+}
+
+.editor-area textarea {
+    min-height: 420px;
+    resize: vertical;
+}
