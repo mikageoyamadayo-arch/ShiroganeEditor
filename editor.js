@@ -1,3 +1,5 @@
+alert("editor.js 読み込み成功！");
+
 const copyButton = document.getElementById("copyButton");
 const chapterSelect = document.getElementById("chapterSelect");
 const verseSelect = document.getElementById("verseSelect");
