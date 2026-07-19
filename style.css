@@ -147,3 +147,27 @@ border-radius:16px;
 box-shadow:0 5px 15px rgba(0,0,0,.08);
 
 }
+
+.chapter-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+margin-top:25px;
+
+}
+
+.chapter-list button{
+
+width:100%;
+
+text-align:left;
+
+padding:16px;
+
+font-size:17px;
+
+}
