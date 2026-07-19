@@ -1,11 +1,14 @@
 const verseTitle = document.getElementById("verseTitle");
 const manuscript = document.getElementById("manuscript");
+const chapterSelect = document.getElementById("chapterSelect");
 const characterCount = document.getElementById("characterCount");
 const saveStatus = document.getElementById("saveStatus");
 
 // 保存済みの内容を読み込む
 verseTitle.value = localStorage.getItem("verseTitle") || "";
 manuscript.value = localStorage.getItem("manuscript") || "";
+chapterSelect.value =
+    localStorage.getItem("chapterSelect") || "chapter1";
 
 // 最初の文字数を表示する
 updateCharacterCount();
@@ -22,12 +25,15 @@ function saveManuscript() {
 
     localStorage.setItem("verseTitle", verseTitle.value);
     localStorage.setItem("manuscript", manuscript.value);
-
+    localStorage.setItem("chapterSelect", chapterSelect.value);
+    
     updateCharacterCount();
 
     saveStatus.textContent = "保存しました";
 
 }
+
+chapterSelect.addEventListener("change", saveManuscript);
 
 // 題名を入力したとき
 verseTitle.addEventListener("input", saveManuscript);
