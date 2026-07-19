@@ -23,5 +23,3 @@ ${chapterList}
 </ul>
 
 `;
-    
-}
