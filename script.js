@@ -7,7 +7,7 @@ const data = books[book];
 const chapterList = data.chapters
     .map(chapter => `
         <li>
-            <button class="chapter-button">
+            <button class="chapter-button" onclick="showChapter('${chapter}')">
                 ${chapter}
             </button>
         </li>
@@ -29,5 +29,8 @@ ${chapterList}
 </ul>
 
 `;
-    
+}
+
+function showChapter(chapter){
+    alert(chapter);    
 };
