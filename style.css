@@ -69,4 +69,21 @@ section h2 {
 section p {
     line-height: 1.8;
     font-size: 18px;
+    
+/* 本 */
+.book {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid #d6c7b0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.book:hover {
+    transform: translateX(5px);
+    background: #fffaf3;
+}
 }
