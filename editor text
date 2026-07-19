@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>白銀エディタ</title>
+
+    <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🖋️ 白銀エディタ</h1>
+
+        <p class="catch">
+            句を執筆する
+        </p>
+
+        <div class="editor-area">
+
+            <label for="verseTitle">
+                句の題名
+            </label>
+
+            <input
+                type="text"
+                id="verseTitle"
+                placeholder="例：1句　彩られし再会"
+            >
+
+            <label for="manuscript">
+                本文
+            </label>
+
+            <textarea
+                id="manuscript"
+                placeholder="ここに本文を書きます"
+            ></textarea>
+
+            <p id="characterCount">
+                文字数：0文字
+            </p>
+
+            <p id="saveStatus">
+                未保存
+            </p>
+
+        </div>
+
+        <button onclick="location.href='index.html'">
+            ← 書庫へ戻る
+        </button>
+
+    </div>
+
+</body>
+
+</html>
