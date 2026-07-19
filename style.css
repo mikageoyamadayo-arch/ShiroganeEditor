@@ -134,9 +134,8 @@ color:#777;
 
 }
 
-#bookDetail:empty {
-    display: none;
-}
+
+#bookDetail {
 
 margin-top:40px;
 
@@ -147,6 +146,25 @@ padding:30px;
 border-radius:16px;
 
 box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+#bookDetail:empty {
+    display: none;
+
+}
+
+#bookDetail ul {
+
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+
+}
+
+#bookDetail li {
+
+    margin: 12px 0;
 
 }
 
