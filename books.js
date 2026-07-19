@@ -10,6 +10,8 @@ const books = {
                 title: "第1折　春色の夢見草",
                 verses: []
             },
+        ]
+    },         
 
     kinka: {
         title: "🌸 金霞の五星",
