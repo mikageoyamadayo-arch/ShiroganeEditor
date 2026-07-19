@@ -2,7 +2,9 @@ function showBook(book){
 
 const detail = document.getElementById("bookDetail");
 
-const data = books[book];
+const chapterList = data.chapters
+    .map(chapter => `<li>${chapter}</li>`)
+    .join("");
 
 detail.innerHTML = `
 
@@ -12,6 +14,10 @@ detail.innerHTML = `
 
 <p>${data.description}</p>
 
-`;
+<h3>📖 折一覧</h3>
 
-}
+<ul>
+${chapterList}
+</ul>
+
+`;
