@@ -1,5 +1,8 @@
 alert("editor.js 読み込み成功！");
 
+const searchText = document.getElementById("searchText");
+const replaceText = document.getElementById("replaceText");
+const replaceButton = document.getElementById("replaceButton");
 const copyButton = document.getElementById("copyButton");
 const chapterSelect = document.getElementById("chapterSelect");
 const verseSelect = document.getElementById("verseSelect");
@@ -260,3 +263,37 @@ if (lastChapter) {
 // 最初の原稿を表示
 updateVerseSelect();
 updateCharacterCount();
+
+replaceButton.addEventListener("click", function () {
+
+    const searchValue = searchText.value;
+    const replaceValue = replaceText.value;
+
+    if (searchValue === "") {
+
+        saveStatus.textContent = "検索する文字を入力してください";
+
+        return;
+
+    }
+
+    const beforeText = manuscript.value;
+
+    const afterText = beforeText.split(searchValue).join(replaceValue);
+
+    if (beforeText === afterText) {
+
+        saveStatus.textContent = "置換する文字が見つかりませんでした";
+
+        return;
+
+    }
+
+    manuscript.value = afterText;
+
+    updateCharacterCount();
+    saveCurrentDraft();
+
+    saveStatus.textContent = "すべて置換しました";
+
+});
