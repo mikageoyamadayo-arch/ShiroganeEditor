@@ -134,7 +134,9 @@ color:#777;
 
 }
 
-#bookDetail{
+#bookDetail:empty {
+    display: none;
+}
 
 margin-top:40px;
 
